@@ -1,0 +1,27 @@
+/* Baloo 2 - HEADLINES and BUTTONS*/
+@font-face {
+  font-family: "Baloo 2";
+  src: url("./fonts/Baloo2-Regular.woff2") format("woff2");
+  font-weight: 400; /* regular */
+  font-style: normal;
+}
+@font-face {
+  font-family: "Baloo 2";
+  src: url("./fonts/Baloo2-Bold.woff2") format("woff2");
+  font-weight: 700; /* bold */
+  font-style: normal;
+}
+
+/* Nunito - BODYTEXT and PRICES*/
+@font-face {
+  font-family: "Nunito";
+  src: url("./fonts/Nunito-Regular.woff2") format("woff2");
+  font-weight: 400; /* regular */
+  font-style: normal;
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("./fonts/Nunito-Bold.woff2") format("woff2");
+  font-weight: 700; /* bold */
+  font-style: normal;
+}

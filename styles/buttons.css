@@ -1,0 +1,43 @@
+.btn-product-category {
+  font-family: "Baloo 2", cursive;
+  font-weight: 700;
+  border: none;
+  padding: 8px 20px;
+  background: #e1e1e1;
+  background-color: rgb(225, 225, 225);
+  border-radius: 8px;
+  cursor: pointer;
+  color: #1f1c1c;
+}
+
+.btn-product-category.active {
+  background: #ff6b00;
+  color: white;
+}
+
+.btn-to-basket {
+  appearance: none;
+  -webkit-appearance: none; /* Safari/Chrome Reset */
+  -moz-appearance: none; /* Firefox Reset */
+  font-family: "Baloo 2", cursive;
+  font-weight: bold;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #ff6b00;
+  border-radius: 50%;
+  color: #ff6b00;
+}
+
+.btn-product-category,
+.btn-to-basket {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.btn-product-category:hover,
+.btn-to-basket:hover {
+  background: #d1d1d1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+  transform: translateY(-2px);
+}
