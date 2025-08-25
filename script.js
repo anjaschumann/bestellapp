@@ -7,9 +7,17 @@ function renderProducts() {
   let productContainer = document.getElementById("product-display");
   productContainer.innerHTML = "";
   for (productIndex = 0; productIndex < myProducts.length; productIndex++) {
-    let singleProduct = myProducts[productIndex];
-    productContainer.innerHTML += getProductTemplate(singleProduct); //singleProduct wird kopiert/referenziert und in die Parameter-Variable (product) eingesetzt
+    productContainer.innerHTML += getProductTemplate(
+      myProducts[productIndex],
+      productIndex
+    );
   }
 }
-
 renderProducts();
+
+function addToCart(index) {
+  let productName = myProducts[index].name;
+  cart.push(productName);
+
+  renderCart();
+}

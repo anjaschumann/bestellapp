@@ -27,17 +27,47 @@
   border: 2px solid #ff6b00;
   border-radius: 50%;
   color: #ff6b00;
+  cursor: pointer;
 }
 
 .btn-product-category,
-.btn-to-basket {
+.btn-to-basket,
+.btn-cart-item-controls,
+.btn-delete-item {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .btn-product-category:hover,
-.btn-to-basket:hover {
-  background: #d1d1d1;
+.btn-to-basket:hover,
+.btn-cart-item-controls:hover,
+.btn-delete-item:hover {
+  /* background: #d1d1d1; */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
   transform: translateY(-2px);
+}
+
+.btn-cart-item-controls {
+  display: flex;
+  align-items: center; /* vertically centered (line-height: centere;)*/
+  justify-content: center; /* horizontally centered (text-align: center;) */
+  border: none;
+  background-color: #ff6b00;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.btn-delete-item {
+  border: none;
+  cursor: pointer;
+  background-color: white;
+}
+.btn-delete-item img {
+  height: 20px;
+  width: 20px;
 }

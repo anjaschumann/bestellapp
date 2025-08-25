@@ -8,14 +8,14 @@ const myProducts = [
       "Lockerer Biskuitboden mit saftigen Stachelbeeren, bedeckt mit luftiger Baiserhaube.",
   },
   {
-    img: "./assets/img/apfelkuchen.webp",
+    img: "./assets/img/gedeckte-apfeltorte.png",
     name: "Apfelkuchen",
     price: 3.2,
     description:
       "Klassischer Rührteig mit frischen Apfelscheiben und Zimt-Zucker verfeinert.",
   },
   {
-    img: "./assets/img/apfelkuchen.webp",
+    img: "./assets/img/kaesekuchen-mit-streuseln.png",
     name: "Käsekuchen mit Streuseln",
     price: 3.8,
     description: "Cremiger Käsekuchen mit knuspriger Butterstreusel-Decke.",
@@ -56,3 +56,5 @@ const myProducts = [
       "Saftige Schokoladenwürfel mit leicht knuspriger Kruste und weichem Kern.",
   },
 ];
+
+let cart = [];

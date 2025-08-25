@@ -1,0 +1,39 @@
+aside {
+  flex: 3;
+}
+
+.cart-item {
+  display: flex;
+  flex-direction: column; /* Überschrift oben, Rest darunter */
+  gap: 0.5rem; /* kleiner Abstand zwischen h3 und der zweiten Reihe */
+  padding: 8px 16px;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08), 0 8px 16px rgba(0, 0, 0, 0.06);
+  /* border-bottom: 1px solid #ddd; */
+}
+
+.cart-item-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* verteilt Elemente */
+  gap: 1rem;
+}
+
+.cart-item-controls div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Abstand zwischen - Zahl + */
+}
+
+.billing {
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08), 0 8px 16px rgba(0, 0, 0, 0.06);
+
+  padding-left: 40px;
+  margin-top: 40px;
+}
+
+.billing-row {
+  display: flex;
+  justify-content: space-between;
+}

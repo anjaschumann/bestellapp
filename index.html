@@ -6,7 +6,7 @@
     <title>Bestell-App</title>
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./styles/standard.css" />
-    <link rel="stylesheet" href="./styles/basket.css" />
+    <link rel="stylesheet" href="./styles/cart.css" />
     <link rel="stylesheet" href="./styles/fonts.css" />
     <link rel="stylesheet" href="./styles/buttons.css" />
   </head>
@@ -34,26 +34,99 @@
     <main>
       <article class="product-ctg-container">
         <ul>
-          <li><button class="btn-product-category">Obstkuchen</button></li>
-          <li><button class="btn-product-category">Rührkuchen</button></li>
-          <li><button class="btn-product-category">Kleingebäck</button></li>
+          <li>
+            <button
+              class="btn-product-category"
+              aria-label="Wähle Rubrik Obstkuchen aus"
+            >
+              Obstkuchen
+            </button>
+          </li>
+          <li>
+            <button
+              class="btn-product-category"
+              aria-label="Wähle Rubrik Rührkuchen aus"
+            >
+              Rührkuchen
+            </button>
+          </li>
+          <li>
+            <button
+              class="btn-product-category"
+              aria-label="Wähle Rubrik Kleingebäck aus"
+            >
+              Kleingebäck
+            </button>
+          </li>
         </ul>
       </article>
 
-      <section id="product-display" class="product-container">
-        <!-- template for dish -->
-        <article class="single-product-display">
-          <img src="./assets/img/baisertorte.webp" alt="Baisertorte" />
-          <div class="single-product-info">
-            <h3>Stachelbeertorte</h3>
-            <p class="description">
-              Hausgemachte Stachelbeertorte, erfrischend knackig süß.
-            </p>
-            <p class="price">3,95 €</p>
-          </div>
-          <button class="btn-to-basket">+</button>
-        </article>
-      </section>
+      <div class="wrapper">
+        <section id="product-display" class="product-container">
+          <!-- template for dish -->
+          <!-- <article class="single-product-display">
+            <img src="./assets/img/baisertorte.webp" alt="Baisertorte" />
+            <div class="single-product-info">
+              <h3>Stachelbeertorte</h3>
+              <p class="description">
+                Hausgemachte Stachelbeertorte, erfrischend knackig süß.
+              </p>
+              <p class="price">3,95 €</p>
+            </div>
+            <button class="btn-to-basket">+</button>
+          </article> -->
+        </section>
+
+        <aside>
+          <h2>Warenkorb</h2>
+          <ul>
+            <li class="cart-item">
+              <h3>Apfelkuchen</h3>
+
+              <div class="cart-item-controls">
+                <div>
+                  <button
+                    class="btn-cart-item-controls"
+                    aria-label="Produkt um 1 verringern"
+                  >
+                    −
+                  </button>
+                  <span>2</span>
+                  <button
+                    class="btn-cart-item-controls"
+                    aria-label="Produkt um 1 erhöhen"
+                  >
+                    +
+                  </button>
+                </div>
+                <p>7,00 €</p>
+                <button
+                  class="btn-delete-item"
+                  aria-label="Produkt aus Warenkorb löschen"
+                >
+                  <img
+                    src="./assets/icons/trash-can-solid.svg"
+                    alt="Trash-Can-Symbol"
+                  />
+                </button>
+              </div>
+            </li>
+          </ul>
+
+          <ul>
+            <li class="billing-row">
+              <span>Zwischensumme</span><span>xxx</span>
+            </li>
+            <li class="billing-row">
+              <span>Lieferkosten</span><span>xxx</span>
+            </li>
+            <li class="billing-row">
+              <span><strong>Gesamt</strong></span
+              ><span>xxx</span>
+            </li>
+          </ul>
+        </aside>
+      </div>
     </main>
 
     <footer></footer>

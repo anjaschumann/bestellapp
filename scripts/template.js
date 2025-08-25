@@ -1,4 +1,4 @@
-function getProductTemplate(product) {
+function getProductTemplate(product, index) {
   return `<article class="single-product-display">
           <img src="${product.img}" alt="" />
           <div class="single-product-info">
@@ -8,6 +8,10 @@ function getProductTemplate(product) {
             </p>
             <p class="price">${product.price.toFixed(2)}€</p>
           </div>
-          <button class="btn-to-basket">+</button>
+          <button onclick="moveToCart(${index})" class="btn-to-basket" aria-label="Produkt in den Warenkorb legen">+</button>
         </article>`;
+}
+
+function renderCart(productInCart) {
+  return;
 }

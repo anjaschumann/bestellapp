@@ -94,7 +94,12 @@ main {
   margin: 0;
 }
 
+.wrapper {
+  display: flex;
+}
+
 .product-container {
+  flex: 7; /* aside --> flex: 3; */
   max-width: 1440px;
   margin: 0 auto;
   margin-left: 16px;
@@ -139,4 +144,9 @@ main {
 
 .single-product-display .btn-to-basket {
   margin-left: auto; /*takes as much space between to first items in container*/
+}
+
+.cart-item-controls span {
+  padding-left: 8px;
+  padding-right: 8px;
 }
