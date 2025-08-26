@@ -13,7 +13,6 @@ function renderProducts() {
     );
   }
 }
-renderProducts();
 
 function renderCart() {
   let cartContainer = document.getElementById("cart-display");
@@ -24,8 +23,17 @@ function renderCart() {
 }
 
 function renderBillingSummary() {
-  let billingContainer = document.getElementById("billing-summary");
-  billingContainer.innerHTML = "";
+  const table = document.getElementById("billing-summary");
+  const subtotal = calculateSubtotal();
+  const shipping = subtotal > 0 ? 3.5 : 0; //ternary condition; if subtotal > 0 -> shipping 3.5, else -> shippping = 0;
+  const total = subtotal + shipping;
+  table.innerHTML = getBillingSummary(subtotal, shipping, total);
+}
+
+function renderAll() {
+  renderCart();
+  renderBillingSummary();
+  renderProducts();
 }
 
 function addToCart(index) {
@@ -57,19 +65,28 @@ function addToCart(index) {
     });
   }
   // 5. Was passiert nach der Entscheidung? Warenkorb neu rendern (damit die Anzeige aktualisiert wird)
-  renderCart();
+  renderAll();
 }
 
 function quantityOneUp(i) {
   let cartItem = cart[i];
   cartItem.quantity += 1;
-  renderCart();
+  renderAll();
 }
+//Original
+// function quantityOneDown(i) {
+//   let cartItem = cart[i];
+//   cartItem.quantity -= 1;
+//   renderAll();
+// }
 
 function quantityOneDown(i) {
-  let cartItem = cart[i];
-  cartItem.quantity -= 1;
-  renderCart();
+  if (cart[i].quantity > 1) {
+    cart[i].quantity -= 1;
+  } else {
+    cart.splice(i, 1);
+  }
+  renderAll();
 }
 
 const formatEUR = (v) =>
@@ -80,11 +97,17 @@ const formatEUR = (v) =>
 
 function deleteFromCart(i) {
   cart.splice(i, 1);
-  renderCart();
+  renderAll();
 }
 
-function calcSubTotal(product) {
-  let sumProduct = formatEUR(product.price * product.quantity);
-
-  cart.forEach(+= formatEUR(product.price * product.quantity))
+//mit forEach ohne arrow funciton
+function calculateSubtotal() {
+  let subtotal = 0;
+  cart.forEach(function (item) {
+    // cart.forEach(item => {)
+    subtotal += item.price * item.quantity;
+  });
+  return subtotal;
 }
+
+renderAll();

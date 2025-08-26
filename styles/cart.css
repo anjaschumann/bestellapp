@@ -4,8 +4,8 @@ aside {
 
 .cart-item {
   display: flex;
-  flex-direction: column; /* Überschrift oben, Rest darunter */
-  gap: 0.5rem; /* kleiner Abstand zwischen h3 und der zweiten Reihe */
+  flex-direction: column;
+  gap: 0.5rem;
   padding: 8px 16px;
   background-color: white;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08), 0 8px 16px rgba(0, 0, 0, 0.06);
@@ -15,25 +15,27 @@ aside {
 .cart-item-controls {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* verteilt Elemente */
+  justify-content: space-between; /* distributes elements evenly */
   gap: 1rem;
 }
 
 .cart-item-controls div {
   display: flex;
   align-items: center;
-  gap: 0.5rem; /* Abstand zwischen - Zahl + */
+  gap: 1rem; /* Abstand zwischen - Zahl + */
 }
 
-.billing {
-  background-color: white;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08), 0 8px 16px rgba(0, 0, 0, 0.06);
-
-  padding-left: 40px;
-  margin-top: 40px;
+.cart-item-controls span {
+  display: inline-block; /*needed for min-width to work*/
+  min-width: 3ch; /*space for 3 digits*/
+  text-align: center; /*number stays centered*/
+  padding: 0 4px; /*also needed*/
 }
 
 .billing-row {
   display: flex;
   justify-content: space-between;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08), 0 8px 16px rgba(0, 0, 0, 0.06);
+  padding: 8px 16px;
 }

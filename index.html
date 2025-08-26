@@ -4,13 +4,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bestell-App</title>
+    <!-- Standard Favicons -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/icons/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/icons/favicon-32x32.png"
+    />
+    <!-- Größere Icons für Android / Chrome -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/assets/icons/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/assets/icons/android-chrome-512x512.png"
+    />
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
+    <!-- Style-sheets -->
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./styles/standard.css" />
     <link rel="stylesheet" href="./styles/cart.css" />
     <link rel="stylesheet" href="./styles/fonts.css" />
     <link rel="stylesheet" href="./styles/buttons.css" />
   </head>
-  <body>
+  <body onload="renderAll()">
     <header>
       <div class="header-content">
         <img
@@ -27,7 +56,8 @@
       />
       <div class="hero-overlay">
         <h1>Tradition & Crumbs</h1>
-        <span class="star-review">Bewertung 4,7 von 5 ⭐</span>
+        <span class="star-review">Bewertung 4,7 von 5 ⭐</span
+        ><span>Liefergebühr 3,50€</span>
       </div>
     </article>
 
@@ -63,18 +93,7 @@
 
       <div class="wrapper">
         <section id="product-display" class="product-container">
-          <!-- template for dish -->
-          <!-- <article class="single-product-display">
-            <img src="./assets/img/baisertorte.webp" alt="Baisertorte" />
-            <div class="single-product-info">
-              <h3>Stachelbeertorte</h3>
-              <p class="description">
-                Hausgemachte Stachelbeertorte, erfrischend knackig süß.
-              </p>
-              <p class="price">3,95 €</p>
-            </div>
-            <button class="btn-to-basket">+</button>
-          </article> -->
+          <!-- template for products -->
         </section>
 
         <aside>
@@ -82,51 +101,12 @@
 
           <ul id="cart-display">
             <!-- template for cart-item -->
-            <!-- <li class="cart-item">
-              <h3>Apfelkuchen</h3>
-
-              <div class="cart-item-controls">
-                <div>
-                  <button
-                    class="btn-cart-item-controls"
-                    aria-label="Produkt um 1 verringern"
-                  >
-                    −
-                  </button>
-                  <span>2</span>
-                  <button
-                    class="btn-cart-item-controls"
-                    aria-label="Produkt um 1 erhöhen"
-                  >
-                    +
-                  </button>
-                </div>
-                <p>7,00 €</p>
-                <button
-                  class="btn-delete-item"
-                  aria-label="Produkt aus Warenkorb löschen"
-                >
-                  <img
-                    src="./assets/icons/trash-can-solid.svg"
-                    alt="Trash-Can-Symbol"
-                  />
-                </button>
-              </div>
-            </li> -->
           </ul>
 
-          <ul id="billing-summary">
-            <li class="billing-row">
-              <span>Zwischensumme</span><span>xxx</span>
-            </li>
-            <li class="billing-row">
-              <span>Lieferkosten</span><span>xxx</span>
-            </li>
-            <li class="billing-row">
-              <span><strong>Gesamt</strong></span
-              ><span>xxx</span>
-            </li>
+          <ul class="billing-summary" id="billing-summary">
+            <!-- template for billing-summary -->
           </ul>
+          <button>Bestellen</button>
         </aside>
       </div>
     </main>
