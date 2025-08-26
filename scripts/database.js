@@ -21,35 +21,35 @@ const myProducts = [
     description: "Cremiger Käsekuchen mit knuspriger Butterstreusel-Decke.",
   },
   {
-    img: "./assets/img/apfelkuchen.webp",
+    img: "./assets/img/kaesekuchen-mit-streuseln.png",
     name: "Pflaumenkuchen",
     price: 3.5,
     description:
       "Hefeteigboden belegt mit reifen Pflaumen, leicht mit Zimt abgeschmeckt.",
   },
   {
-    img: "./assets/img/apfelkuchen.webp",
+    img: "./assets/img/kaesekuchen-mit-streuseln.png",
     name: "Aprikosenkuchen",
     price: 3.6,
     description:
       "Saftiger Rührkuchen mit sonnengereiften Aprikosen und leichter Glasur.",
   },
   {
-    img: "./assets/img/apfelkuchen.webp",
+    img: "./assets/img/kaesekuchen-mit-streuseln.png",
     name: "Gedeckte Apfeltorte",
     price: 4.0,
     description:
       "Feiner Mürbeteig mit Apfelfüllung und Zimt, von einer goldbraunen Teigdecke umhüllt.",
   },
   {
-    img: "./assets/img/apfelkuchen.webp",
+    img: "./assets/img/kaesekuchen-mit-streuseln.png",
     name: "Zimtschnecken",
     price: 2.2,
     description:
       "Süßes Hefeteiggebäck mit Zimt-Zucker-Füllung und leichter Zuckerglasur.",
   },
   {
-    img: "./assets/img/apfelkuchen.webp",
+    img: "./assets/img/kaesekuchen-mit-streuseln.png",
     name: "Brownies",
     price: 2.8,
     description:
