@@ -99,19 +99,33 @@
         <aside>
           <h2>Warenkorb</h2>
 
-          <ul id="cart-display">
+          <ul class="cart-display" id="cart-display">
             <!-- template for cart-item -->
           </ul>
 
           <ul class="billing-summary" id="billing-summary">
             <!-- template for billing-summary -->
           </ul>
-          <button>Bestellen</button>
+          <button onclick="placeOrder()" class="btn-place-order">
+            Bestellen
+          </button>
         </aside>
       </div>
     </main>
 
     <footer></footer>
+
+    <!-- dialog placed order -->
+    <dialog id="dialog-placed-order">
+      <section id="dialogDescription">
+        <p>Vielen Dank.</p>
+        <p>Die Bestellung ist nun in Bearbeitung.</p>
+      </section>
+
+      <button aria-label="Dialog schließen" onclick="closeDialog()">
+        schließen
+      </button>
+    </dialog>
 
     <script src="./scripts/database.js"></script>
     <script src="./scripts/template.js"></script>

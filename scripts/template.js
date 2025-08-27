@@ -49,13 +49,13 @@ function getCartTemplate(product, index) {
 
 function getBillingSummary(subtotal, delivery, total) {
   return `<li class="billing-row">
-              <span>Zwischensumme</span><span>${formatEUR(subtotal)}</span>
+              <span>Zwischensumme</span><span>${formatEUR(subtotal)}€</span>
             </li>
             <li class="billing-row">
-              <span>Lieferkosten</span><span>${formatEUR(delivery)}</span>
+              <span>Lieferkosten</span><span>${formatEUR(delivery)}€</span>
             </li>
-            <li class="billing-row">
+            <li class="billing-row total">
               <span><strong>Gesamt</strong></span
-              ><span>${formatEUR(total)}</span>
+              ><span>${formatEUR(total)}€</span>
             </li>`;
 }

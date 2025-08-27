@@ -71,3 +71,19 @@
   height: 20px;
   width: 20px;
 }
+
+.btn-place-order {
+  align-self: center;
+  width: 70%;
+  padding: 16px 16px;
+  margin-top: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff6b00;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding-inline-start: 40px;
+}

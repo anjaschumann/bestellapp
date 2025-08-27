@@ -111,3 +111,10 @@ function calculateSubtotal() {
 }
 
 renderAll();
+
+function placeOrder() {
+  cart.length = 0;
+  renderAll();
+  const dialogRef = document.getElementById("dialog-placed-order");
+  dialogRef.showModal();
+}

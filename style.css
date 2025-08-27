@@ -154,3 +154,31 @@ main {
   padding-left: 8px;
   padding-right: 8px;
 }
+
+dialog[open] {
+  display: flex;
+  flex-direction: column; /* Inhalte stapeln */
+  align-items: center; /* horizontal zentrieren */
+  justify-content: center; /* vertikal zentrieren, optional */
+  font-size: 24px;
+  position: fixed; /* top layer verlässlich */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0; /* verhindert UA-Autolayout */
+  border: none;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  max-width: 90vw;
+  max-height: 80vh;
+  overflow: auto; /* falls Inhalt groß wird */
+}
+
+/* Abdunkelung */
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+dialog p {
+  text-align: center;
+}
