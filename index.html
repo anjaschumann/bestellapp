@@ -62,7 +62,7 @@
     </article>
 
     <main>
-      <article class="product-ctg-container">
+      <div class="product-ctg-container">
         <ul>
           <li>
             <button
@@ -89,7 +89,7 @@
             </button>
           </li>
         </ul>
-      </article>
+      </div>
 
       <div class="wrapper">
         <section id="product-display" class="product-container">
@@ -122,7 +122,11 @@
         <p>Die Bestellung ist nun in Bearbeitung.</p>
       </section>
 
-      <button aria-label="Dialog schließen" onclick="closeDialog()">
+      <button
+        class="btn-close-dialog"
+        aria-label="Dialog schließen"
+        onclick="closeDialog()"
+      >
         schließen
       </button>
     </dialog>

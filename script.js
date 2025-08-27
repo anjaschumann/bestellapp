@@ -118,3 +118,8 @@ function placeOrder() {
   const dialogRef = document.getElementById("dialog-placed-order");
   dialogRef.showModal();
 }
+
+function closeDialog() {
+  const dialogRef = document.getElementById("dialog-placed-order");
+  dialogRef.close();
+}

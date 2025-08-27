@@ -5,9 +5,18 @@ aside {
   gap: 16px;
   padding: 16px;
   box-sizing: border-box;
+  /* neu */
+  position: sticky;
+  align-self: flex-start;
+  height: fit-content;
+  z-index: 10;
+  top: calc(112px + 16px);
+  max-height: calc(100vh - (112px + 16px));
 }
 
 .cart-display {
+  flex: 1; /*fills space*/
+  overflow-y: auto; /*scrollbar for many items in cart*/
   list-style: none;
   margin: 0;
   padding: 0;
