@@ -1,8 +1,32 @@
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .btn-resp-cart {
-    display: inline-block;
+    display: block;
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    bottom: 32px;
+    z-index: 1001; /* über dem Cart */
+    padding: 14px 18px;
+    border: 0;
+    border-radius: 999px;
+    background: #ff6b00;
+    color: #fff;
+    font-weight: 700;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
   }
+
   .btn-shopping-cart {
     display: none;
+  }
+
+  .responsive-cart-container {
+    display: block;
+    position: fixed;
+    height: 100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(225, 225, 225);
   }
 }

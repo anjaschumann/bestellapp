@@ -130,7 +130,8 @@ main {
 
 .single-product-display img {
   height: 80px;
-  width: auto;
+  width: 80px;
+  object-fit: cover;
   border-radius: 8px;
 }
 
@@ -191,5 +192,5 @@ dialog p {
 
 footer {
   background-color: rgb(225, 225, 225);
-  height: 120px;
+  height: 100px;
 }
