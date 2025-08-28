@@ -1,17 +1,26 @@
 aside {
-  flex: 3;
-  display: flex;
+  display: none;
+  flex: 0 0 320px;
   flex-direction: column;
   gap: 16px;
   padding: 16px;
   box-sizing: border-box;
-  /* neu */
   position: sticky;
   align-self: flex-start;
   height: fit-content;
   z-index: 10;
   top: calc(112px + 16px);
   max-height: calc(100vh - (112px + 16px));
+}
+
+aside.is-open {
+  display: flex; /*only what changes is put in toggle*/
+}
+
+.cart-icon {
+  fill: white;
+  width: 48px;
+  height: 48px;
 }
 
 .cart-display {
@@ -21,6 +30,7 @@ aside {
   margin: 0;
   padding: 0;
   width: 100%;
+  font-size: 14px;
 }
 
 .billing-summary {
@@ -30,6 +40,7 @@ aside {
   width: 100%;
   background-color: white;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08), 0 8px 16px rgba(0, 0, 0, 0.06);
+  font-size: 14px;
 }
 
 .cart-item {
@@ -78,4 +89,26 @@ aside {
   border-top: 2px solid #ddd;
   margin-top: 0.5rem;
   font-weight: bold;
+}
+
+.empty-cart-note {
+  display: none;
+}
+
+.empty-cart-note.visible {
+  display: block;
+  color: rgb(110, 107, 107);
+  text-align: center;
+  margin-top: 48px;
+  margin-bottom: 24px;
+}
+
+.empty-cart-note p {
+  max-width: 70%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.empty-cart-note h3 {
+  color: rgb(110, 107, 107);
 }

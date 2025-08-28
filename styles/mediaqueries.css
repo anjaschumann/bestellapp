@@ -1,0 +1,8 @@
+@media (max-width: 768px) {
+  .btn-resp-cart {
+    display: inline-block;
+  }
+  .btn-shopping-cart {
+    display: none;
+  }
+}

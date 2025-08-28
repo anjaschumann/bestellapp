@@ -27,8 +27,12 @@ header {
 }
 
 .header-content {
+  margin: 0 auto;
   max-width: 1440px;
+  display: flex;
+  justify-content: space-between;
 }
+
 .header-content img {
   height: 80px;
   width: auto;
@@ -38,8 +42,6 @@ header {
   position: relative; /*relative means, this container is point of reference for absolute positioned child-elements; all absolute postioned child-elements (like overlay-text will be aligned to hero-container.  */
   height: 400px; /*fixed height of hero*/
   overflow: hidden; /*img gets got to size of 300px*/
-  max-width: 1440px;
-  margin: 0 auto; /*keeps container centered above width: 1440px;*/
 }
 
 .hero-container img {
@@ -83,8 +85,6 @@ main {
   background-color: #fafafa;
 }
 .product-ctg-container {
-  max-width: 1440px;
-  margin: 0 auto;
   padding: 16px 24px;
   overflow-x: auto; /*gets scrollbar, if content does not fit container*/
   /* white-space: nowrap; prevents line break */
@@ -101,14 +101,19 @@ main {
 .wrapper {
   display: flex;
   align-items: flex-start; /*needed for sticky cart*/
+  margin: 0 auto;
+}
+
+.content-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .product-container {
-  flex: 7; /* aside --> flex: 3; */
-  max-width: 1440px;
-  margin: 0 auto;
-  margin-left: 16px;
-  margin-right: 16px;
+  max-width: 100%;
+  margin: 0;
 }
 
 .single-product-display {
@@ -182,4 +187,9 @@ dialog::backdrop {
 
 dialog p {
   text-align: center;
+}
+
+footer {
+  background-color: rgb(225, 225, 225);
+  height: 120px;
 }

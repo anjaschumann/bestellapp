@@ -34,6 +34,7 @@ function renderAll() {
   renderCart();
   renderBillingSummary();
   renderProducts();
+  updateEmptyCartSpecifics();
 }
 
 function addToCart(index) {
@@ -122,4 +123,14 @@ function placeOrder() {
 function closeDialog() {
   const dialogRef = document.getElementById("dialog-placed-order");
   dialogRef.close();
+}
+
+function updateEmptyCartSpecifics() {
+  const emptyCartNote = document.getElementById("empty-cart-note");
+  emptyCartNote.classList.toggle("visible", cart.length === 0);
+}
+
+function toggleCart() {
+  const cartBtnRef = document.getElementById("cart");
+  cartBtnRef.classList.toggle("is-open");
 }
