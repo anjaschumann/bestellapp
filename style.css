@@ -162,7 +162,7 @@ main {
   padding-right: 8px;
 }
 
-dialog[open] {
+.dialog-placed-order[open] {
   display: flex;
   flex-direction: column; /* Inhalte stapeln */
   align-items: center; /* horizontal zentrieren */
@@ -182,11 +182,11 @@ dialog[open] {
 }
 
 /* Abdunkelung */
-dialog::backdrop {
+.dialog-placed-order::backdrop {
   background: rgba(0, 0, 0, 0.5);
 }
 
-dialog p {
+.dialog-placed-order p {
   text-align: center;
 }
 

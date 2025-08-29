@@ -134,3 +134,9 @@ function toggleCart() {
   const cartBtnRef = document.getElementById("cart");
   cartBtnRef.classList.toggle("is-open");
 }
+
+//according to placeOrder() with showModal( )
+function openRespCartDialog() {
+  const respCartRef = document.getElementById("resp-cart-dialog");
+  respCartRef.showModal();
+}

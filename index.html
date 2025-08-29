@@ -141,16 +141,44 @@
       </div>
     </main>
 
-    <div class="responsive-cart-container">
-      <button id="btn-resp-cart" class="btn-resp-cart" type="button">
+    <div class="responsive-cart-button-container">
+      <button
+        onclick="openRespCartDialog()"
+        id="btn-resp-cart"
+        class="btn-resp-cart"
+        type="button"
+      >
         Warenkorb
       </button>
     </div>
 
     <footer></footer>
 
+    <!-- Responsive Cart -->
+    <dialog class="resp-cart-dialog" id="resp-cart-dialog">
+      <div class="cart" id="cart">
+        <h2>Warenkorb</h2>
+
+        <div id="empty-cart-note" class="empty-cart-note">
+          <h3>Dein Warenkorb ist leer.</h3>
+          <p>Wähle Produkte aus dem Shop und füge sie hinzu.</p>
+        </div>
+
+        <ul class="cart-display" id="cart-display">
+          <!-- template for cart-item -->
+        </ul>
+
+        <ul class="billing-summary" id="billing-summary">
+          <!-- template for billing-summary -->
+        </ul>
+        <button onclick="placeOrder()" class="btn-place-order">
+          Bestellen
+        </button>
+      </div>
+    </dialog>
+
     <!-- dialog placed order -->
-    <dialog id="dialog-placed-order">
+    <dialog class="dialog-placed-order" id="dialog-placed-order">
       <section id="dialogDescription">
         <p>Vielen Dank.</p>
         <p>Die Bestellung ist nun in Bearbeitung.</p>

@@ -20,7 +20,7 @@
     display: none;
   }
 
-  .responsive-cart-container {
+  .responsive-cart-button-container {
     display: block;
     position: fixed;
     height: 100px;
@@ -28,5 +28,10 @@
     right: 0;
     bottom: 0;
     background-color: rgb(225, 225, 225);
+  }
+
+  .resp-cart-dialog {
+    width: min(720px, 100vw);
+    margin: 0 auto;
   }
 }
