@@ -35,6 +35,8 @@ function renderAll() {
   renderBillingSummary();
   renderProducts();
   updateEmptyCartSpecifics();
+  showTotalInBtnPlaceOrder();
+  showQuantityInCart();
 }
 
 function addToCart(index) {
@@ -69,17 +71,39 @@ function addToCart(index) {
   renderAll();
 }
 
+function showQuantityInCart() {
+  const quantityRef = document.getElementById("quantity-in-cart");
+  let totalAmountOfProductsInCart = 0;
+  cart.forEach((element) => {
+    totalAmountOfProductsInCart += element.quantity;
+  });
+  quantityRef.innerText = totalAmountOfProductsInCart;
+}
+
+function showTotalInBtnPlaceOrder() {
+  const orderBtnRef = document.getElementById("btn-place-order");
+  let total = 0;
+  cart.forEach((element) => {
+    total += element.price * element.quantity;
+  });
+  if (cart.length > 0) {
+    total += 3.5;
+    orderBtnRef.innerText = `Bezahlen ${formatEUR(total)}€`;
+    orderBtnRef.classList.remove("btn-disabled"); /* changes style of button */
+    orderBtnRef.disabled = false; /* disabled is attribute in button tag, does not only change style, but also btn cannot be clicked */
+  } else {
+    orderBtnRef.innerText = `Bezahlen`;
+    orderBtnRef.classList.add("btn-disabled"); /* changes style of button */
+    orderBtnRef.disabled = true; /* disabled attribute does not only change style, but makes btn clickable */
+  }
+}
+
 function quantityOneUp(i) {
   let cartItem = cart[i];
   cartItem.quantity += 1;
   renderAll();
+  showQuantityInCart();
 }
-//Original
-// function quantityOneDown(i) {
-//   let cartItem = cart[i];
-//   cartItem.quantity -= 1;
-//   renderAll();
-// }
 
 function quantityOneDown(i) {
   if (cart[i].quantity > 1) {
@@ -88,6 +112,7 @@ function quantityOneDown(i) {
     cart.splice(i, 1);
   }
   renderAll();
+  showQuantityInCart();
 }
 
 const formatEUR = (v) =>
