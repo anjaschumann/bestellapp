@@ -65,7 +65,7 @@
 .cart-item-controls div {
   display: flex;
   align-items: center;
-  gap: 1rem; /* Abstand zwischen - Zahl + */
+  gap: 1rem;
 }
 
 .cart-item-controls span {
@@ -115,24 +115,4 @@
 
 .responsive-cart-button-container {
   display: none;
-}
-
-.resp-cart-dialog {
-  width: 100vw;
-  max-width: 100%;
-  margin: 0;
-  border: 0;
-  padding: 0;
-  background: #fff;
-  border-radius: 16px 16px 0 0;
-  box-shadow: 0 -16px 40px rgba(0, 0, 0, 0.18);
-  /* unten andocken */
-  inset: auto 0 0 0;
-  transform: none;
-  max-height: 80vh;
-  overflow: auto;
-}
-
-.resp-cart-dialog::backdrop {
-  background: rgba(0, 0, 0, 0.35);
 }

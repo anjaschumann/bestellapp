@@ -1,8 +1,3 @@
-//Gerichte anzeigen lassen (render)
-//template erstellen
-//add to basket
-//saveToLocalStorage
-
 function renderProducts() {
   let productContainer = document.getElementById("product-display");
   productContainer.innerHTML = "";
@@ -102,7 +97,6 @@ function quantityOneUp(i) {
   let cartItem = cart[i];
   cartItem.quantity += 1;
   renderAll();
-  showQuantityInCart();
 }
 
 function quantityOneDown(i) {
@@ -112,7 +106,6 @@ function quantityOneDown(i) {
     cart.splice(i, 1);
   }
   renderAll();
-  showQuantityInCart();
 }
 
 const formatEUR = (v) =>
@@ -135,8 +128,6 @@ function calculateSubtotal() {
   });
   return subtotal;
 }
-
-renderAll();
 
 function placeOrder() {
   cart.length = 0;

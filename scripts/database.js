@@ -2,7 +2,7 @@
 const myProducts = [
   {
     img: "./assets/img/baisertorte.webp",
-    name: "Stachelbeer-Baiser-Torte",
+    name: "Stachelbeer-Torte",
     price: 4.2,
     description:
       "Lockerer Biskuitboden mit saftigen Stachelbeeren, bedeckt mit luftiger Baiserhaube.",

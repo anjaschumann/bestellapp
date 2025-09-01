@@ -1,8 +1,17 @@
+/* Flex-Items haben standardmäßig min-width: auto; Mindestbreite ist Contentbreite, so viel wie benötigt wird;
+der übergeordnete wrapper content-colum oder wrapper stehen auch auf standard min-width auto, und erlauben damit nicht 
+untergeordneten containern unter die benötigte breite zu schrumpfen. Daher müssen auch diese auf min-width: 0; gesetzt werden
+Erlaubt dem Content-Strang, wirklich zu schrumpfen */
+.wrapper > * {
+  min-width: 0;
+} /* > is a childselector and * means all tags, in this case in wrapperLO */
+
 body {
   font-family: "Nunito", sans-serif;
   font-weight: 400;
   color: #1f1c1c;
   background-color: #f7f7f7;
+  margin: 0;
 }
 
 h1 {
@@ -41,11 +50,10 @@ header {
 .hero-container {
   position: relative; /*relative means, this container is point of reference for absolute positioned child-elements; all absolute postioned child-elements (like overlay-text will be aligned to hero-container.  */
   height: 400px; /*fixed height of hero*/
-  overflow: hidden; /*img gets got to size of 300px*/
 }
 
 .hero-container img {
-  object-fit: cover; /*aligns img to the center without distortion*/
+  object-fit: cover; /*aligns img to the centLOer without distortion*/
   display: block; /*img is standard inline-block element, gaps possible; with display: block; it takes whole width/height of container*/
   width: 100%;
   height: 100%;
@@ -75,8 +83,9 @@ header {
   margin-right: 32px;
 }
 
-.star-review {
-  margin-left: 16px;
+.restaurant-info {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 main {
@@ -113,7 +122,7 @@ main {
 
 .product-container {
   max-width: 100%;
-  margin: 0;
+  margin: 30px;
 }
 
 .single-product-display {
@@ -133,11 +142,15 @@ main {
   width: 80px;
   object-fit: cover;
   border-radius: 8px;
+  flex-shrink: 0;
 }
 
 .single-product-info {
-  display: flex;
-  flex-direction: column;
+  flex: 1;
+  /* müssen die? */
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .description {
@@ -147,6 +160,8 @@ main {
 
 .single-product-info h3 {
   color: rgb(31, 28, 28);
+  line-height: 1rem;
+  margin-bottom: 8px;
 }
 
 .price {
@@ -155,6 +170,7 @@ main {
 
 .single-product-display .btn-to-basket {
   margin-left: auto; /*takes as much space between to first items in container*/
+  flex-shrink: 0;
 }
 
 .cart-item-controls span {

@@ -60,7 +60,7 @@
 
 .btn-cart-item-controls {
   display: flex;
-  align-items: center; /* vertically centered (line-height: centere;)*/
+  align-items: center; /* vertically centered (line-height: center;)*/
   justify-content: center; /* horizontally centered (text-align: center;) */
   border: none;
   background-color: #ff6b00;

@@ -41,7 +41,7 @@
     <link rel="stylesheet" href="./styles/mediaqueries.css" />
   </head>
 
-  <body onload="renderAll(); showTotalInBtnPlaceOrder()">
+  <body onload="renderAll()">
     <header>
       <div class="header-content">
         <img
@@ -80,8 +80,10 @@
             />
             <div class="hero-overlay">
               <h1>Tradition & Crumbs</h1>
-              <span class="star-review">Bewertung 4,7 von 5 ⭐</span
-              ><span>Liefergebühr 3,50€</span>
+              <div class="restaurant-info">
+                <span>Bewertung 4,7 von 5 ⭐</span
+                ><span>Liefergebühr 3,50€</span>
+              </div>
             </div>
           </article>
           <!-- PRODUCT CATEGORIES -->
@@ -158,8 +160,8 @@
     </div>
 
     <footer></footer>
-
-    <!-- Responsive Cart -->
+    <!-- -------------------------------------------------------------------------------------------------------- -->
+    <!-- RESPONSIVE Cart -->
     <dialog class="resp-cart-dialog" id="resp-cart-dialog">
       <div class="cart" id="cart">
         <h2>Warenkorb</h2>
@@ -181,7 +183,7 @@
         </button>
       </div>
     </dialog>
-
+    <!-- ----------------------------------------------------------------------------------------------------- -->
     <!-- dialog placed order -->
     <dialog class="dialog-placed-order" id="dialog-placed-order">
       <section id="dialogDescription">
