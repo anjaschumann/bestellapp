@@ -9,6 +9,11 @@ function renderProducts() {
   }
 }
 
+function renderCartFrame() {
+  let cartFrameContainer = document.getElementById("cart");
+  cartFrameContainer.innerHTML = getCartFrameTemplate();
+}
+
 function renderCart() {
   let cartContainer = document.getElementById("cart-display");
   cartContainer.innerHTML = "";
@@ -25,8 +30,13 @@ function renderBillingSummary() {
   table.innerHTML = getBillingSummary(subtotal, shipping, total);
 }
 
-function renderAll() {
+function renderFullCart() {
+  renderCartFrame();
   renderCart();
+}
+
+function renderAll() {
+  renderFullCart();
   renderBillingSummary();
   renderProducts();
   updateEmptyCartSpecifics();
@@ -151,8 +161,8 @@ function toggleCart() {
   cartBtnRef.classList.toggle("is-open");
 }
 
-//according to placeOrder() with showModal( )
-function openRespCartDialog() {
-  const respCartRef = document.getElementById("resp-cart-dialog");
-  respCartRef.showModal();
+function toggleRespCart() {
+  const respCartDialogRef = document.getElementById("resp-cart-dialog");
+  respCartDialogRef.showModal();
+  respCartDialogRef.innerHTML = renderFullCart();
 }

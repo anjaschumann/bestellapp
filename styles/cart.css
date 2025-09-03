@@ -115,4 +115,10 @@
 
 .responsive-cart-button-container {
   display: none;
+  position: fixed;
+  height: 100px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(225, 225, 225);
 }
