@@ -14,16 +14,13 @@ function getProductTemplate(product, index) {
 
 function getCartFrameTemplate() {
   return `<h2>Warenkorb</h2>
-
           <div id="empty-cart-note" class="empty-cart-note">
             <h3>Dein Warenkorb ist leer.</h3>
             <p>Wähle Produkte aus dem Shop und füge sie hinzu.</p>
           </div>
-
           <ul class="cart-display" id="cart-display">
             <!-- template for cart-item -->
           </ul>
-
           <ul class="billing-summary" id="billing-summary">
             <!-- template for billing-summary -->
           </ul>

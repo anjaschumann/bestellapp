@@ -161,8 +161,39 @@ function toggleCart() {
   cartBtnRef.classList.toggle("is-open");
 }
 
-function toggleRespCart() {
-  const respCartDialogRef = document.getElementById("resp-cart-dialog");
-  respCartDialogRef.showModal();
-  respCartDialogRef.innerHTML = renderFullCart();
-}
+//according to placeOrder() with showModal( )
+// function openRespCartDialog() {
+//   const respCartRef = document.getElementById("resp-cart-dialog");
+//   respCartRef.showModal();
+// }
+
+// function toggleCart() {
+//   const cartBtnRef = document.getElementById("cart");
+//   if (window.innerWidth <= 768) {
+// adding mobile modifier
+//   cartBtnRef.classList.add("cart-mobile");
+// } else {
+// delete modifier, when deskop
+// cartBtnRef.classList.remove("cart-mobile");
+//in both cases toggle visibility
+//     cartBtnRef.classList.toggle("is-open");
+//   }
+// }
+
+// function toggleCart() {
+//   const cart = document.getElementById("cart");
+//   const isMobile = window.innerWidth <= 768;
+//   if (isMobile) {
+//     cart.classList.add("cart-mobile");
+//   } else {
+//     cart.classList.remove("cart-mobile");
+//   }
+//   cart.classList.toggle("is-open");
+// }
+
+// function toggleRespCart() {
+//   const respCartDialogRef = document.getElementById("resp-cart-dialog");
+//   respCartDialogRef.showModal();
+//   respCartDialogRef.innerHTML = `<div id="cart-container"></div>`;
+//   renderFullCart();
+// }
