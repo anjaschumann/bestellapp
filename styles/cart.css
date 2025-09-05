@@ -1,5 +1,36 @@
+.cart-container {
+  display: flex;
+  position: sticky;
+  flex: 0 0 320px; /* feste Spaltenbreite */
+  min-width: 320px;
+  top: calc(112px + 16px);
+  /* limit block */
+  max-height: calc(100dvh - (112px + 16px));
+  overflow: clip; /* no scrollbar */
+  flex: 0 0 320px;
+  align-self: flex-start;
+  z-index: 10;
+  box-sizing: border-box;
+  padding: 16px;
+}
+
 .cart {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 0; /* impoortant so that cart-scroll can scroll */
+  width: 100%;
+}
+
+/* Die eigentliche Scroll-Area */
+.cart-scroll {
+  flex: 1 1 auto; /* takes the space there is */
+  min-height: 0;
+  overflow: auto; /* for scrollbar */
+}
+
+/* .cart {
+  display: flex;
   flex: 0 0 320px;
   flex-direction: column;
   gap: 16px;
@@ -11,11 +42,7 @@
   z-index: 10;
   top: calc(112px + 16px);
   max-height: calc(100vh - (112px + 16px));
-}
-
-.cart.is-open {
-  display: flex; /*only what changes is put in toggle*/
-}
+} */
 
 .cart-icon {
   fill: white;

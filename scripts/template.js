@@ -12,26 +12,26 @@ function getProductTemplate(product, index) {
         </article>`;
 }
 
-function getCartFrameTemplate() {
-  return `<h2>Warenkorb</h2>
-          <div id="empty-cart-note" class="empty-cart-note">
-            <h3>Dein Warenkorb ist leer.</h3>
-            <p>Wähle Produkte aus dem Shop und füge sie hinzu.</p>
-          </div>
-          <ul class="cart-display" id="cart-display">
-            <!-- template for cart-item -->
-          </ul>
-          <ul class="billing-summary" id="billing-summary">
-            <!-- template for billing-summary -->
-          </ul>
-          <button
-            id="btn-place-order"
-            onclick="placeOrder()"
-            class="btn-place-order"
-          >
-            Bestellen
-          </button>`;
-}
+// function getCartFrameTemplate() {
+//   return `<h2>Warenkorb</h2>
+//           <div id="empty-cart-note" class="empty-cart-note">
+//             <h3>Dein Warenkorb ist leer.</h3>
+//             <p>Wähle Produkte aus dem Shop und füge sie hinzu.</p>
+//           </div>
+//           <ul class="cart-display" id="cart-display">
+//             <!-- template for cart-item -->
+//           </ul>
+//           <ul class="billing-summary" id="billing-summary">
+//             <!-- template for billing-summary -->
+//           </ul>
+//           <button
+//             id="btn-place-order"
+//             onclick="placeOrder()"
+//             class="btn-place-order"
+//           >
+//             Bestellen
+//           </button>`;
+// }
 
 function getCartTemplate(product, index) {
   /*parameters just have same name as product-template parameters, but do not belong to each other*/

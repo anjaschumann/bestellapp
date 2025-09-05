@@ -9,12 +9,13 @@ function renderProducts() {
   }
 }
 
-function renderCartFrame() {
-  let cartFrameContainer = document.getElementById("cart");
-  cartFrameContainer.innerHTML = getCartFrameTemplate();
-}
+// function renderCartFrame() {
+//   let cartFrameContainer = document.getElementById("cart");
+//   cartFrameContainer.innerHTML = getCartFrameTemplate();
+// }
 
 function renderCart() {
+  console.log("getCartTemplate");
   let cartContainer = document.getElementById("cart-display");
   cartContainer.innerHTML = "";
   for (let cartIndex = 0; cartIndex < cart.length; cartIndex++) {
@@ -30,18 +31,21 @@ function renderBillingSummary() {
   table.innerHTML = getBillingSummary(subtotal, shipping, total);
 }
 
-function renderFullCart() {
-  renderCartFrame();
-  renderCart();
-}
+// function renderFullCart() {
+//   renderCartFrame();
+//   renderCart();
+// }
 
 function renderAll() {
-  renderFullCart();
-  renderBillingSummary();
   renderProducts();
-  updateEmptyCartSpecifics();
-  showTotalInBtnPlaceOrder();
   showQuantityInCart();
+  let cartContainer = document.getElementById("cart-container");
+  if (cartContainer.innerHTML != "") {
+    renderCart();
+    renderBillingSummary();
+    updateEmptyCartSpecifics();
+    showTotalInBtnPlaceOrder();
+  }
 }
 
 function addToCart(index) {
@@ -161,39 +165,36 @@ function toggleCart() {
   cartBtnRef.classList.toggle("is-open");
 }
 
-//according to placeOrder() with showModal( )
-// function openRespCartDialog() {
-//   const respCartRef = document.getElementById("resp-cart-dialog");
-//   respCartRef.showModal();
-// }
+function renderCartDesktop() {
+  console.log("Hallo");
+  let container = document.getElementById("cart-container");
 
-// function toggleCart() {
-//   const cartBtnRef = document.getElementById("cart");
-//   if (window.innerWidth <= 768) {
-// adding mobile modifier
-//   cartBtnRef.classList.add("cart-mobile");
-// } else {
-// delete modifier, when deskop
-// cartBtnRef.classList.remove("cart-mobile");
-//in both cases toggle visibility
-//     cartBtnRef.classList.toggle("is-open");
-//   }
-// }
-
-// function toggleCart() {
-//   const cart = document.getElementById("cart");
-//   const isMobile = window.innerWidth <= 768;
-//   if (isMobile) {
-//     cart.classList.add("cart-mobile");
-//   } else {
-//     cart.classList.remove("cart-mobile");
-//   }
-//   cart.classList.toggle("is-open");
-// }
-
-// function toggleRespCart() {
-//   const respCartDialogRef = document.getElementById("resp-cart-dialog");
-//   respCartDialogRef.showModal();
-//   respCartDialogRef.innerHTML = `<div id="cart-container"></div>`;
-//   renderFullCart();
-// }
+  if (container.innerHTML === "") {
+    container.innerHTML = `<aside class="cart" id="cart">
+          <h2>Warenkorb</h2>
+          <div id="empty-cart-note" class="empty-cart-note">
+            <h3>Dein Warenkorb ist leer.</h3>
+            <p>Wähle Produkte aus dem Shop und füge sie hinzu.</p>
+          </div>
+          <ul class="cart-display cart-scroll" id="cart-display">
+            <!-- template for cart-item -->
+          </ul>
+          <ul class="billing-summary" id="billing-summary">
+            <!-- template for billing-summary -->
+          </ul>
+          <button
+            id="btn-place-order"
+            onclick="placeOrder()"
+            class="btn-place-order"
+          >
+            Bestellen
+          </button>
+        </aside>`;
+    renderCart();
+    renderBillingSummary();
+    updateEmptyCartSpecifics();
+    showTotalInBtnPlaceOrder();
+  } else {
+    container.innerHTML = "";
+  }
+}
