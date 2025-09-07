@@ -1,37 +1,6 @@
-.cart-container {
-  display: flex;
-  position: sticky;
-  flex: 0 0 320px; /* feste Spaltenbreite */
-  min-width: 320px;
-  top: calc(112px + 16px);
-  /* limit block */
-  max-height: calc(100dvh - (112px + 16px));
-  overflow: clip; /* no scrollbar */
-  flex: 0 0 320px;
-  align-self: flex-start;
-  z-index: 10;
-  box-sizing: border-box;
-  padding: 16px;
-}
-
 .cart {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
-  min-height: 0; /* impoortant so that cart-scroll can scroll */
-  width: 100%;
-}
-
-/* Die eigentliche Scroll-Area */
-.cart-scroll {
-  flex: 1 1 auto; /* takes the space there is */
-  min-height: 0;
-  overflow: auto; /* for scrollbar */
-}
-
-/* .cart {
-  display: flex;
-  flex: 0 0 320px;
+  width: 320px;
   flex-direction: column;
   gap: 16px;
   padding: 16px;
@@ -42,7 +11,7 @@
   z-index: 10;
   top: calc(112px + 16px);
   max-height: calc(100vh - (112px + 16px));
-} */
+}
 
 .cart-icon {
   fill: white;
@@ -78,13 +47,12 @@
   padding: 16px;
   background-color: white;
   box-sizing: border-box;
-  /* border-bottom: 1px solid #ddd; */
 }
 
 .cart-item-controls {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* distributes elements evenly */
+  justify-content: space-between;
   gap: 1rem;
   width: 100%;
 }
@@ -99,7 +67,7 @@
   display: inline-block; /*needed for min-width to work*/
   min-width: 3ch; /*space for 3 digits*/
   text-align: center; /*number stays centered*/
-  padding: 0 4px; /*also needed*/
+  padding: 0 4px; /*needed* in addition*/
 }
 
 .billing-row {
@@ -142,10 +110,56 @@
 
 .responsive-cart-button-container {
   display: none;
-  position: fixed;
+  /* position: fixed;
   height: 100px;
   left: 0;
   right: 0;
   bottom: 0;
   background-color: rgb(225, 225, 225);
+  align-items: center; */
+  position: fixed;
+  bottom: 0; /* klebt am unteren Bildrand */
+  left: 0;
+  width: 100%; /* volle Breite */
+  background-color: rgb(225, 225, 225);
+  padding: 8px 0; /* etwas vertikaler Abstand */
+  justify-content: center; /* Button horizontal zentrieren */
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1); /* leichte Schattenkante */
+  z-index: 1000; /* über Inhalt legen */
+}
+
+.dialog-resp-cart[open] {
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  /* inset: auto 0 0;
+  margin: auto;
+  border: none; */
+  position: fixed;
+
+  /* unten andocken + horizontal zentrieren */
+  bottom: 0;
+  left: 50%;
+  top: auto; /* wichtig: alte top-Werte neutralisieren */
+  right: auto; /* falls irgendwo gesetzt */
+  transform: translateX(-50%); /* nur X verschieben, kein Y! */
+
+  /* Größe/Optik */
+  width: 90%;
+  max-width: 640px;
+  margin: 0;
+  border: none;
+  border-radius: 16px 16px 0 0;
+  background: #fff;
+  max-height: 80vh;
+  overflow: auto;
+}
+
+.dialog-resp-cart .cart {
+  width: min(90ch, 100%); /* angenehme Lesebreite, aber responsiv */
+  max-width: 640px; /* optional */
+  margin: 0 auto; /* falls du kein Flex nutzen willst */
+}
+.dialog-resp-cart::backdrop {
+  background: rgba(0, 0, 0, 0.5);
 }

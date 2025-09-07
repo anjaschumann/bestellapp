@@ -52,6 +52,7 @@
           onclick="renderCartDesktop()"
           id="btn-shopping-cart"
           class="btn-shopping-cart"
+          type="button"
         >
           <span id="quantity-in-cart"></span>
           <svg
@@ -125,7 +126,7 @@
 
     <div class="responsive-cart-button-container">
       <button
-        onclick="toggleRespCart()"
+        onclick="renderCartMobile()"
         id="btn-resp-cart"
         class="btn-resp-cart"
         type="button"
@@ -137,7 +138,7 @@
     <footer></footer>
     <!-- -------------------------------------------------------------------------------------------------------- -->
     <!-- RESPONSIVE Cart -->
-    <dialog class="resp-cart-dialog" id="resp-cart-dialog"></dialog>
+    <dialog class="dialog-resp-cart" id="dialog-resp-cart"></dialog>
 
     <!-- ----------------------------------------------------------------------------------------------------- -->
     <!-- dialog placed order -->
@@ -151,6 +152,7 @@
         class="btn-close-dialog"
         aria-label="Dialog schließen"
         onclick="closeDialog()"
+        type="button"
       >
         schließen
       </button>

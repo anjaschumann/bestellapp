@@ -15,7 +15,6 @@ function renderProducts() {
 // }
 
 function renderCart() {
-  console.log("getCartTemplate");
   let cartContainer = document.getElementById("cart-display");
   cartContainer.innerHTML = "";
   for (let cartIndex = 0; cartIndex < cart.length; cartIndex++) {
@@ -31,16 +30,12 @@ function renderBillingSummary() {
   table.innerHTML = getBillingSummary(subtotal, shipping, total);
 }
 
-// function renderFullCart() {
-//   renderCartFrame();
-//   renderCart();
-// }
-
 function renderAll() {
   renderProducts();
   showQuantityInCart();
   let cartContainer = document.getElementById("cart-container");
-  if (cartContainer.innerHTML != "") {
+  let dialogRespCart = document.getElementById("dialog-resp-cart");
+  if (cartContainer.innerHTML != "" || dialogRespCart.innerHTML != "") {
     renderCart();
     renderBillingSummary();
     updateEmptyCartSpecifics();
@@ -160,36 +155,16 @@ function updateEmptyCartSpecifics() {
   emptyCartNote.classList.toggle("visible", cart.length === 0);
 }
 
-function toggleCart() {
-  const cartBtnRef = document.getElementById("cart");
-  cartBtnRef.classList.toggle("is-open");
-}
+// function toggleCart() {
+//   const cartBtnRef = document.getElementById("cart");
+//   cartBtnRef.classList.toggle("is-open");
+// }
 
 function renderCartDesktop() {
-  console.log("Hallo");
   let container = document.getElementById("cart-container");
 
   if (container.innerHTML === "") {
-    container.innerHTML = `<aside class="cart" id="cart">
-          <h2>Warenkorb</h2>
-          <div id="empty-cart-note" class="empty-cart-note">
-            <h3>Dein Warenkorb ist leer.</h3>
-            <p>Wähle Produkte aus dem Shop und füge sie hinzu.</p>
-          </div>
-          <ul class="cart-display cart-scroll" id="cart-display">
-            <!-- template for cart-item -->
-          </ul>
-          <ul class="billing-summary" id="billing-summary">
-            <!-- template for billing-summary -->
-          </ul>
-          <button
-            id="btn-place-order"
-            onclick="placeOrder()"
-            class="btn-place-order"
-          >
-            Bestellen
-          </button>
-        </aside>`;
+    container.innerHTML = getAside();
     renderCart();
     renderBillingSummary();
     updateEmptyCartSpecifics();
@@ -197,4 +172,25 @@ function renderCartDesktop() {
   } else {
     container.innerHTML = "";
   }
+}
+
+function renderCartMobile() {
+  let container = document.getElementById("cart-container");
+  let dialogRespCart = document.getElementById("dialog-resp-cart");
+  container = container.innerHTML = "";
+
+  dialogRespCart.showModal();
+  dialogRespCart.innerHTML =
+    `<button onclick="closeDialogRespCart()" class="btn-close-resp-cart">x</button>` +
+    getAside();
+  renderCart();
+  renderBillingSummary();
+  updateEmptyCartSpecifics();
+  showTotalInBtnPlaceOrder();
+}
+
+function closeDialogRespCart() {
+  console.log("help me");
+  let dialogRespCartRef = document.getElementById("dialog-resp-cart");
+  dialogRespCartRef.close();
 }

@@ -1,11 +1,3 @@
-/* Flex-Items haben standardmäßig min-width: auto; Mindestbreite ist Contentbreite, so viel wie benötigt wird;
-der übergeordnete wrapper content-colum oder wrapper stehen auch auf standard min-width auto, und erlauben damit nicht 
-untergeordneten containern unter die benötigte breite zu schrumpfen. Daher müssen auch diese auf min-width: 0; gesetzt werden
-Erlaubt dem Content-Strang, wirklich zu schrumpfen */
-.wrapper > * {
-  min-width: 0;
-} /* > is a childselector and * means all tags, in this case in wrapperLO */
-
 body {
   font-family: "Nunito", sans-serif;
   font-weight: 400;
@@ -45,6 +37,18 @@ header {
 .header-content img {
   height: 80px;
   width: auto;
+}
+
+/* Flex-Items haben standardmäßig min-width: auto; Mindestbreite ist Contentbreite, so viel wie benötigt wird;
+der übergeordnete wrapper content-colum oder wrapper stehen auch auf standard min-width auto, und erlauben damit nicht 
+untergeordneten containern unter die benötigte breite zu schrumpfen. Daher müssen auch diese auf min-width: 0; gesetzt werden
+Erlaubt dem Content-Strang, wirklich zu schrumpfen */
+/* .wrapper > * {
+  min-width: 0;
+}   das gleich wie, siehe unten...*/
+.content-column,
+.cart-container {
+  min-width: 0;
 }
 
 .hero-container {
@@ -197,7 +201,6 @@ main {
   overflow: auto; /* falls Inhalt groß wird */
 }
 
-/* Abdunkelung */
 .dialog-placed-order::backdrop {
   background: rgba(0, 0, 0, 0.5);
 }
