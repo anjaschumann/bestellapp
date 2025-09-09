@@ -20,8 +20,8 @@
 }
 
 .cart-display {
-  flex: 1; /*fills space*/
-  overflow-y: auto; /*scrollbar for many items in cart*/
+  flex: 1;
+  overflow-y: auto;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -64,10 +64,10 @@
 }
 
 .cart-item-controls span {
-  display: inline-block; /*needed for min-width to work*/
-  min-width: 3ch; /*space for 3 digits*/
-  text-align: center; /*number stays centered*/
-  padding: 0 4px; /*needed* in addition*/
+  display: inline-block;
+  min-width: 3ch;
+  text-align: center;
+  padding: 0 4px;
 }
 
 .billing-row {
@@ -110,41 +110,24 @@
 
 .responsive-cart-button-container {
   display: none;
-  /* position: fixed;
-  height: 100px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgb(225, 225, 225);
-  align-items: center; */
   position: fixed;
-  bottom: 0; /* klebt am unteren Bildrand */
+  bottom: 0;
   left: 0;
-  width: 100%; /* volle Breite */
+  width: 100%;
   background-color: rgb(225, 225, 225);
-  padding: 8px 0; /* etwas vertikaler Abstand */
-  justify-content: center; /* Button horizontal zentrieren */
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1); /* leichte Schattenkante */
-  z-index: 1000; /* über Inhalt legen */
+  padding: 8px 0;
+  justify-content: center;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
 .dialog-resp-cart[open] {
-  /* top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
-  /* inset: auto 0 0;
-  margin: auto;
-  border: none; */
   position: fixed;
-
-  /* unten andocken + horizontal zentrieren */
   bottom: 0;
   left: 50%;
-  top: auto; /* wichtig: alte top-Werte neutralisieren */
-  right: auto; /* falls irgendwo gesetzt */
-  transform: translateX(-50%); /* nur X verschieben, kein Y! */
-
-  /* Größe/Optik */
+  top: auto;
+  right: auto;
+  transform: translateX(-50%);
   width: 90%;
   max-width: 640px;
   margin: 0;
@@ -156,9 +139,9 @@
 }
 
 .dialog-resp-cart .cart {
-  width: min(90ch, 100%); /* angenehme Lesebreite, aber responsiv */
-  max-width: 640px; /* optional */
-  margin: 0 auto; /* falls du kein Flex nutzen willst */
+  width: min(90ch, 100%);
+  max-width: 640px;
+  margin: 0 auto;
 }
 .dialog-resp-cart::backdrop {
   background: rgba(0, 0, 0, 0.5);

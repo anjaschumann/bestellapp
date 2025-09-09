@@ -13,7 +13,6 @@ function getProductTemplate(product, index) {
 }
 
 function getCartTemplate(product, index) {
-  /*parameters just have same name as product-template parameters, but do not belong to each other*/
   return `<li class="cart-item">
            <h3>${product.name}</h3>
 

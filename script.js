@@ -20,7 +20,7 @@ function renderCart() {
 function renderBillingSummary() {
   const table = document.getElementById("billing-summary");
   const subtotal = calculateSubtotal();
-  const shipping = subtotal > 0 ? 3.5 : 0; //ternary condition; if subtotal > 0 -> shipping 3.5, else -> shippping = 0;
+  const shipping = subtotal > 0 ? 3.5 : 0;
   const total = subtotal + shipping;
   table.innerHTML = getBillingSummary(subtotal, shipping, total);
 }
@@ -39,28 +39,20 @@ function renderAll() {
   }
 }
 
-//function takes one parameter (index: the position of product inside myProducts)
 function addToCart(index) {
-  let product = myProducts[index]; //gets product at position index from myProduct[] and stores it in variable product
-  // find() searches array for existing entry that matches this product; find() returns first matching element or undefined if none is found
+  let product = myProducts[index];
   let itemInCart = cart.find(function (element) {
-    //search condition: a cart entry is considered a match, if its name matches exactly the product.name
     return element.name === product.name;
   });
-  //checks whether a matching entry was found (truthy → it exists). itemInCart=true
   if (itemInCart) {
-    // if yes: increase the quantity of that cart item by 1
     itemInCart.quantity++;
   } else {
-    //if not (item is not found in cart)
     cart.push({
-      //pusht () adds new object to cart with:
-      name: product.name, // pass name
-      price: product.price, // pass price
-      quantity: 1, // set quantity to 1, because first item passed
-    }); //no index needs to be set/transferred
+      name: product.name,
+      price: product.price,
+      quantity: 1,
+    });
   }
-  // rendering to update cart information
   renderAll();
 }
 
@@ -82,12 +74,12 @@ function showTotalInBtnPlaceOrder() {
   if (cart.length > 0) {
     total += 3.5;
     orderBtnRef.innerText = `Bezahlen ${formatEUR(total)}€`;
-    orderBtnRef.classList.remove("btn-disabled"); /* changes style of button */
-    orderBtnRef.disabled = false; /* disabled is attribute in button tag, does not only change style, but also btn cannot be clicked */
+    orderBtnRef.classList.remove("btn-disabled");
+    orderBtnRef.disabled = false;
   } else {
     orderBtnRef.innerText = `Bezahlen`;
-    orderBtnRef.classList.add("btn-disabled"); /* changes style of button */
-    orderBtnRef.disabled = true; /* disabled attribute does not only change style, but makes btn clickable */
+    orderBtnRef.classList.add("btn-disabled");
+    orderBtnRef.disabled = true;
   }
 }
 

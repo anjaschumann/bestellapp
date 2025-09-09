@@ -45,14 +45,6 @@ header {
   margin: 0 auto;
 }
 
-/* Flex-Items haben standardmäßig min-width: auto; Mindestbreite ist Contentbreite, so viel wie benötigt wird;
-der übergeordnete wrapper content-colum oder wrapper stehen auch auf standard min-width auto, und erlauben damit nicht 
-untergeordneten containern unter die benötigte breite zu schrumpfen. Daher müssen auch diese auf min-width: 0; gesetzt werden
-Erlaubt dem Content-Strang, wirklich zu schrumpfen */
-/* .wrapper > * {
-  min-width: 0;
-}   das gleich wie, siehe unten...*/
-
 .content-column {
   min-width: 0;
 }
@@ -64,13 +56,13 @@ Erlaubt dem Content-Strang, wirklich zu schrumpfen */
 }
 
 .hero-container {
-  position: relative; /*relative means, this container is point of reference for absolute positioned child-elements; all absolute postioned child-elements (like overlay-text will be aligned to hero-container.  */
-  height: 400px; /*fixed height of hero*/
+  position: relative;
+  height: 400px;
 }
 
 .hero-container img {
-  object-fit: cover; /*aligns img to the center without distortion*/
-  display: block; /*img is standard inline-block element, gaps possible; with display: block; it takes whole width/height of container*/
+  object-fit: cover;
+  display: block;
   width: 100%;
   height: 100%;
 }
@@ -111,8 +103,7 @@ main {
 }
 .product-ctg-container {
   padding: 16px 24px;
-  overflow-x: auto; /*gets scrollbar, if content does not fit container*/
-  /* white-space: nowrap; prevents line break */
+  overflow-x: auto;
 }
 
 .product-ctg-container ul {
@@ -157,7 +148,6 @@ main {
 
 .single-product-info {
   flex: 1;
-  /* müssen die? */
   overflow-wrap: anywhere;
   word-break: break-word;
   hyphens: auto;
@@ -179,7 +169,7 @@ main {
 }
 
 .single-product-display .btn-to-basket {
-  margin-left: auto; /*takes as much space between to first items in container*/
+  margin-left: auto;
   flex-shrink: 0;
 }
 
@@ -190,21 +180,21 @@ main {
 
 .dialog-placed-order[open] {
   display: flex;
-  flex-direction: column; /* Inhalte stapeln */
-  align-items: center; /* horizontal zentrieren */
-  justify-content: center; /* vertikal zentrieren, optional */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   font-size: 24px;
-  position: fixed; /* top layer verlässlich */
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  margin: 0; /* verhindert UA-Autolayout */
+  margin: 0;
   border: none;
   border-radius: 8px;
   padding: 1rem 1.25rem;
   max-width: 90vw;
   max-height: 80vh;
-  overflow: auto; /* falls Inhalt groß wird */
+  overflow: auto;
 }
 
 .dialog-placed-order::backdrop {
