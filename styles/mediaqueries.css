@@ -1,6 +1,6 @@
 @media (max-width: 768px) {
   .btn-resp-cart {
-    display: block;
+    display: flex;
   }
 
   .btn-shopping-cart {
@@ -29,15 +29,15 @@
     flex: 0 0 56px;
     width: 56px;
     height: 56px;
-    /* align-self: center; */
     display: block;
   }
 
   .product-container {
-    margin: 8px;
+    margin: 12px;
   }
 
-  .product-container {
-    margin: 12px;
+  .cart-item {
+    padding-left: 0;
+    padding-right: 0;
   }
 }

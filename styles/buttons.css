@@ -18,6 +18,10 @@
   border-radius: 8px;
   cursor: pointer;
   color: #1f1c1c;
+  /*disabled style*/
+  pointer-events: none; /* click, hover-effects etc will be ignored */
+  background-color: grey;
+  opacity: 0.2;
 }
 
 .btn-product-category.active {
@@ -78,6 +82,7 @@
   cursor: pointer;
   background-color: white;
 }
+
 .btn-delete-item img {
   height: 20px;
   width: 20px;
@@ -120,23 +125,10 @@
 }
 
 .btn-resp-cart {
-  /* display: none;
-  position: fixed;
-  left: 16px;
-  right: 16px;
-  bottom: 32px;
-  z-index: 1001;
-  padding: 14px 18px;
-  border: 0;
-  border-radius: 99px;
-  background: #ff6b00;
-  color: #fff;
-  font-weight: 700;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-  cursor: pointer; */
   padding: 8px 16px;
+  width: 80%;
   font-size: 1rem;
-  border-radius: 9999px; /* pill shape */
+  border-radius: 8px;
   border: none;
   background-color: #ff6b00;
   color: #fff;
@@ -144,14 +136,27 @@
   cursor: pointer;
   margin-top: 16px;
   margin-bottom: 16px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .btn-close-resp-cart {
   position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
+  top: 16px;
+  right: 24px;
   border: none;
-  background: transparent;
-  font-size: 1.5rem;
+  background: #ff6b00;
+  font-size: 24px;
   cursor: pointer;
+  color: white;
+  border-radius: 50%;
+  padding: 16px;
+  width: 50px;
+  height: 50px;
+  align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
 }

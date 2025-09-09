@@ -9,11 +9,6 @@ function renderProducts() {
   }
 }
 
-// function renderCartFrame() {
-//   let cartFrameContainer = document.getElementById("cart");
-//   cartFrameContainer.innerHTML = getCartFrameTemplate();
-// }
-
 function renderCart() {
   let cartContainer = document.getElementById("cart-display");
   cartContainer.innerHTML = "";
@@ -33,6 +28,7 @@ function renderBillingSummary() {
 function renderAll() {
   renderProducts();
   showQuantityInCart();
+  showQuantityInRespCart();
   let cartContainer = document.getElementById("cart-container");
   let dialogRespCart = document.getElementById("dialog-resp-cart");
   if (cartContainer.innerHTML != "" || dialogRespCart.innerHTML != "") {
@@ -43,35 +39,28 @@ function renderAll() {
   }
 }
 
+//function takes one parameter (index: the position of product inside myProducts)
 function addToCart(index) {
-  // 1. Was ist das Ziel? Produkt aus myProducts holen
-  let product = myProducts[index];
-
-  // 2. Welche Daten habe ich vll schon? Im Warenkorb (cart) prüfen, ob schon ein Produkt mit gleichem Namen existiert
-  // find() durchsucht das Array und gibt das erste gefundene Objekt zurück,
-  // wenn die Bedingung erfüllt ist. Wenn nichts gefunden wird → undefined.
+  let product = myProducts[index]; //gets product at position index from myProduct[] and stores it in variable product
+  // find() searches array for existing entry that matches this product; find() returns first matching element or undefined if none is found
   let itemInCart = cart.find(function (element) {
-    //find() returned das ganze Objekt, dessen Namen es gefunden hat
+    //search condition: a cart entry is considered a match, if its name matches exactly the product.name
     return element.name === product.name;
-    // Vergleich: hat ein Element im cart denselben Namen wie das Produkt aus myProducts?
   });
-  //itemInCart ist das Objekt im array cart[]
-  // 3. Welche Info kriege ich? Wenn itemInCart NICHT undefined ist → Produkt existiert schon
+  //checks whether a matching entry was found (truthy → it exists). itemInCart=true
   if (itemInCart) {
-    //itemInCart hat den Wert
-    // → quantity (Anzahl) um 1 erhöhen
+    // if yes: increase the quantity of that cart item by 1
     itemInCart.quantity++;
   } else {
-    // 4. WElche ENtscheidung muss die Funktion treffen? Wenn Produkt noch nicht im Warenkorb ist
-    // → neues Objekt ins Array pushen
+    //if not (item is not found in cart)
     cart.push({
-      //pusht () setzt immer ans ende, hier muss also kein index übergeben werden
-      name: product.name, // Name übernehmen
-      price: product.price, // Preis übernehmen
-      quantity: 1, // quantity auf 1 setzen (weil gerade erst hinzugefügt)
-    });
+      //pusht () adds new object to cart with:
+      name: product.name, // pass name
+      price: product.price, // pass price
+      quantity: 1, // set quantity to 1, because first item passed
+    }); //no index needs to be set/transferred
   }
-  // 5. Was passiert nach der Entscheidung? Warenkorb neu rendern (damit die Anzeige aktualisiert wird)
+  // rendering to update cart information
   renderAll();
 }
 
@@ -128,7 +117,6 @@ function deleteFromCart(i) {
   renderAll();
 }
 
-//mit forEach ohne arrow funciton
 function calculateSubtotal() {
   let subtotal = 0;
   cart.forEach(function (item) {
@@ -155,14 +143,8 @@ function updateEmptyCartSpecifics() {
   emptyCartNote.classList.toggle("visible", cart.length === 0);
 }
 
-// function toggleCart() {
-//   const cartBtnRef = document.getElementById("cart");
-//   cartBtnRef.classList.toggle("is-open");
-// }
-
 function renderCartDesktop() {
   let container = document.getElementById("cart-container");
-
   if (container.innerHTML === "") {
     container.innerHTML = getAside();
     renderCart();
@@ -174,11 +156,10 @@ function renderCartDesktop() {
   }
 }
 
-function renderCartMobile() {
+function renderRespCart() {
   let container = document.getElementById("cart-container");
   let dialogRespCart = document.getElementById("dialog-resp-cart");
   container = container.innerHTML = "";
-
   dialogRespCart.showModal();
   dialogRespCart.innerHTML =
     `<button onclick="closeDialogRespCart()" class="btn-close-resp-cart">x</button>` +
@@ -190,7 +171,16 @@ function renderCartMobile() {
 }
 
 function closeDialogRespCart() {
-  console.log("help me");
+  console.log("help");
   let dialogRespCartRef = document.getElementById("dialog-resp-cart");
   dialogRespCartRef.close();
+}
+
+function showQuantityInRespCart() {
+  const quantityRef = document.getElementById("quantity-in-resp-cart");
+  let totalAmountOfProductsInCart = 0;
+  cart.forEach((element) => {
+    totalAmountOfProductsInCart += element.quantity;
+  });
+  quantityRef.innerText = totalAmountOfProductsInCart;
 }
